@@ -11,4 +11,9 @@ public class MainController {
     return "index";
   }
 
+  @RequestMapping("/detail")
+  public String detail() {
+    return "proinfo";
+  }
+
 }

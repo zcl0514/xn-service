@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xiangnong.xnservice.mapper.DetailCarouselImgMapper">
+  <resultMap id="BaseResultMap" type="com.xiangnong.xnservice.entity.DetailCarouselImg">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="img_url" jdbcType="VARCHAR" property="imgUrl" />
+    <result column="img_desc" jdbcType="VARCHAR" property="imgDesc" />
+    <result column="goods_id" jdbcType="BIGINT" property="goodsId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, img_url, img_desc, goods_id
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_detail_carousel_img
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from t_detail_carousel_img
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.xiangnong.xnservice.entity.DetailCarouselImg">
+    insert into t_detail_carousel_img (id, img_url, img_desc, 
+      goods_id)
+    values (#{id,jdbcType=BIGINT}, #{imgUrl,jdbcType=VARCHAR}, #{imgDesc,jdbcType=VARCHAR}, 
+      #{goodsId,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiangnong.xnservice.entity.DetailCarouselImg">
+    insert into t_detail_carousel_img
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="imgUrl != null">
+        img_url,
+      </if>
+      <if test="imgDesc != null">
+        img_desc,
+      </if>
+      <if test="goodsId != null">
+        goods_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="imgUrl != null">
+        #{imgUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="imgDesc != null">
+        #{imgDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsId != null">
+        #{goodsId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiangnong.xnservice.entity.DetailCarouselImg">
+    update t_detail_carousel_img
+    <set>
+      <if test="imgUrl != null">
+        img_url = #{imgUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="imgDesc != null">
+        img_desc = #{imgDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsId != null">
+        goods_id = #{goodsId,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiangnong.xnservice.entity.DetailCarouselImg">
+    update t_detail_carousel_img
+    set img_url = #{imgUrl,jdbcType=VARCHAR},
+      img_desc = #{imgDesc,jdbcType=VARCHAR},
+      goods_id = #{goodsId,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

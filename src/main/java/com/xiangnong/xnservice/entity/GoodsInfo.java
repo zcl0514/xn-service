@@ -7,9 +7,13 @@ public class GoodsInfo {
 
     private String imgUrl;
 
-    private String description;
-
     private String goodsTitle;
+
+    private Integer showPriority;
+
+    private String detailImgUrl;
+
+    private String description;
 
     public Long getGoodsId() {
         return goodsId;
@@ -35,19 +39,35 @@ public class GoodsInfo {
         this.imgUrl = imgUrl == null ? null : imgUrl.trim();
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description == null ? null : description.trim();
-    }
-
     public String getGoodsTitle() {
         return goodsTitle;
     }
 
     public void setGoodsTitle(String goodsTitle) {
         this.goodsTitle = goodsTitle == null ? null : goodsTitle.trim();
+    }
+
+    public Integer getShowPriority() {
+        return showPriority;
+    }
+
+    public void setShowPriority(Integer showPriority) {
+        this.showPriority = showPriority;
+    }
+
+    public String getDetailImgUrl() {
+        return detailImgUrl;
+    }
+
+    public void setDetailImgUrl(String detailImgUrl) {
+        this.detailImgUrl = detailImgUrl == null ? null : detailImgUrl.trim();
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description == null ? null : description.trim();
     }
 }

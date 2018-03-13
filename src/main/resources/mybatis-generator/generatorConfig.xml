@@ -35,7 +35,7 @@
            enableDeleteByExample="false" enableSelectByExample="false"
            selectByExampleQueryId="false"/>-->
 
-    <table tableName="t_goods" domainObjectName="GoodsInfo"
+    <table tableName="t_detail_carousel_img" domainObjectName="DetailCarouselImg"
       enableCountByExample="false" enableUpdateByExample="false"
       enableDeleteByExample="false" enableSelectByExample="false"
       selectByExampleQueryId="false">
